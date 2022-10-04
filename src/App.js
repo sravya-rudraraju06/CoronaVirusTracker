@@ -7,9 +7,8 @@ function App() {
   //props 
   const [country,setCountry] = useState("")
   const countrySelected =(childData)=>{
-    // this data is coming from child component to parent component
     console.log(childData)
-    setCountry(childData)      // dynamically it is setting
+    setCountry(childData)      
 
   }
   return (
@@ -22,6 +21,5 @@ function App() {
     </div>
   );
 }
-// props variable country = {country} actual country and define them in above with useState hook
 
 export default App;
