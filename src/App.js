@@ -1,25 +1,27 @@
-import logo from './logo.svg';
+import React,{useState} from "react";
 import './App.css';
+import CountriesDropDown from "./CountriesDropDown";
+import CovidInfo from "./CovidInfo";
 
 function App() {
+  //props 
+  const [country,setCountry] = useState("")
+  const countrySelected =(childData)=>{
+    // this data is coming from child component to parent component
+    console.log(childData)
+    setCountry(childData)      // dynamically it is setting
+
+  }
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className ="App">
+      <h1>
+        Covid19 Tracker App in react
+      </h1>
+      <CountriesDropDown selectedCountry={countrySelected}></CountriesDropDown>
+      <CovidInfo country={country}></CovidInfo>                          
     </div>
   );
 }
+// props variable country = {country} actual country and define them in above with useState hook
 
 export default App;
