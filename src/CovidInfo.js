@@ -9,11 +9,10 @@ const CovidInfo = (props) => {
                          .then((res)=>res.json())
                          .then((res)=>{
                             console.log(res)
-                            const index = res.length - 1     // this will get last index of array (active last cases we need)
+                            const index = res.length - 1    
                             setCovidData(res[index])
                             console.log(index)
                          })
-                                                                         // what ever the user is clicking (props.country)
     }
     return (
         <div>
